@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { IconPickerItem, iconList } from '.'
+import { IconPickerItem, iconList as allIconsList } from '.'
 import { useState, useEffect, useRef } from 'react'
 import * as CSS from 'csstype'
 import { IconList } from './iconType'
@@ -14,6 +14,7 @@ interface IconPickerProps {
   buttonIconStyles?: CSS.Properties
   pickerIconStyles?: CSS.Properties
   searchInputStyles?: CSS.Properties
+  iconList?: Array
 }
 
 const IconPicker: React.SFC<IconPickerProps> = ({
@@ -25,6 +26,7 @@ const IconPicker: React.SFC<IconPickerProps> = ({
   buttonIconStyles,
   pickerIconStyles,
   searchInputStyles,
+  iconList = allIconsList,
 }) => {
   const ref = useRef(null)
   const [display, changeDisplay] = useState(false)
